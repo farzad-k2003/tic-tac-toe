@@ -1,0 +1,90 @@
+.game {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 60vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (80px)[3];
+      grid-template-columns: repeat(3, 80px);
+  -ms-grid-rows: (80px)[3];
+      grid-template-rows: repeat(3, 80px);
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: auto;
+}
+
+.game div {
+  min-width: 80px;
+  height: 80px;
+  padding: 5px;
+  border: 1px solid gray;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.game #item0 {
+  border-top: none;
+  border-left: none;
+}
+
+.game #item1 {
+  border-top: 0;
+}
+
+.game #item2 {
+  border-top: 0;
+  border-right: 0;
+}
+
+.game #item3 {
+  border-left: 0;
+}
+
+.game #item5 {
+  border-right: 0;
+}
+
+.game #item6 {
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.game #item7 {
+  border-bottom: 0;
+}
+
+.game #item8 {
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.game button {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  bottom: 150px;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f7d002;
+  border: none;
+  border-radius: 4px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.game button:active {
+  bottom: 147px;
+  background-color: #b49600;
+}
+/*# sourceMappingURL=Game.css.map */

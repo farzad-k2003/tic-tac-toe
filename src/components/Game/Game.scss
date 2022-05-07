@@ -1,0 +1,74 @@
+.game {
+  width: max-content;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+
+  div {
+    min-width: 80px;
+    height: 80px;
+    padding: 5px;
+    border: 1px solid gray;
+    transition: all 0.3s;
+  }
+
+  #item0 {
+    border-top: none;
+    border-left: none;
+  }
+
+  #item1 {
+    border-top: 0;
+  }
+
+  #item2 {
+    border-top: 0;
+    border-right: 0;
+  }
+
+  #item3 {
+    border-left: 0;
+  }
+
+  #item5 {
+    border-right: 0;
+  }
+
+  #item6 {
+    border-bottom: 0;
+    border-left: 0;
+  }
+
+  #item7 {
+    border-bottom: 0;
+  }
+
+  #item8 {
+    border-bottom: 0;
+    border-right: 0;
+  }
+
+  button {
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    bottom: 150px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #f7d002;
+    border: none;
+    border-radius: 4px;
+    grid-column: 2 / 3;
+    transition: all 0.1s;
+  }
+  button:active {
+    bottom: 147px;
+    background-color: #b49600;
+  }
+}
