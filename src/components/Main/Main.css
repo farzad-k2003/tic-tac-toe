@@ -11,4 +11,38 @@ body {
   min-width: 250px;
   background-color: #323031;
 }
+
+body .reset-btn-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .reset-btn-container .reset-btn {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  bottom: 110px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid #f7d002;
+  color: #f7d002;
+  background-color: #323031;
+  border-radius: 5px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+body .reset-btn-container .reset-btn:active {
+  bottom: 107px;
+  background-color: #242223;
+}
 /*# sourceMappingURL=Main.css.map */

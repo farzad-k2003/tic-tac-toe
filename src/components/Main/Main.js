@@ -18,6 +18,10 @@ const Main = () => {
   const styleCondotion =
     winner === "#41D3BD" || winner === "#D90429" || winner === "#F7D002";
 
+  const resetPoints = () => {
+    setRedPoint(0);
+    setBluePoint(0);
+  };
   return (
     <>
       <div className="main">
@@ -31,6 +35,11 @@ const Main = () => {
       <h2 style={styleCondotion ? winnerStyle : { color: "#323031" }}>
         {winner === "#F7D002" ? "DRAW!" : "We have a WINNER!"}
       </h2>
+      <div className="reset-btn-container">
+        <button onClick={resetPoints} className="reset-btn">
+          0 - 0
+        </button>
+      </div>
       <Result redPoint={redPoint} bluePoint={bluePoint} />
     </>
   );
