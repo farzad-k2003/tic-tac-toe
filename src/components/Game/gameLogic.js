@@ -14,17 +14,14 @@ export const handleClick = (event, state, setState, turn, setTurn) => {
       return newState;
     });
 
-    if (
-      turn &&
-      event.currentTarget.style.backgroundColor === "rgb(50, 48, 49)"
-    ) {
-      event.target.style.backgroundColor = "#41D3BD";
-    } else if (
-      !turn &&
-      event.currentTarget.style.backgroundColor === "rgb(50, 48, 49)"
-    ) {
-      event.target.style.backgroundColor = "#D90429";
-    }
+    // if (turn && event.target.style.backgroundColor === "rgb(50, 48, 49)") {
+    //   event.target.style.backgroundColor = "#41D3BD";
+    // } else if (
+    //   !turn &&
+    //   event.target.style.backgroundColor === "rgb(50, 48, 49)"
+    // ) {
+    //   event.target.style.backgroundColor = "#D90429";
+    // }
 
     setTurn((prev) => !prev);
   }

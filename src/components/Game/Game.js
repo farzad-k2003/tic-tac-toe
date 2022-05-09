@@ -2,11 +2,10 @@ import "./Game.css";
 import { useEffect, useState } from "react";
 import { handleClick } from "./gameLogic";
 import { winnerLogic } from "./winnerLogic";
-
-let myState = ["", "", "", "", "", "", "", "", ""];
+import { v4 as uuidv4 } from "uuid";
 
 const Game = ({ setWinner, setRedPoint, setBluePoint }) => {
-  const [state, setState] = useState(myState);
+  const [state, setState] = useState(Array(9).fill(""));
   const [turn, setTurn] = useState(true);
   const [gameIsOn, setGameIsOn] = useState(true);
 
@@ -24,17 +23,22 @@ const Game = ({ setWinner, setRedPoint, setBluePoint }) => {
   );
 
   const resetHandler = (event) => {
-    setState(myState);
+    setState(Array(9).fill(""));
     setTurn(true);
     setGameIsOn(true);
     setWinner(null);
-    const parent = event.target.parentNode;
-    const siblings = [].slice.call(parent.children).filter(function (child) {
-      return child !== event.target;
-    });
-    siblings.forEach((item) => {
-      item.style.backgroundColor = "#323031";
-    });
+  };
+
+  const styleHandler = (index) => {
+    const item = state[index];
+
+    if (item === "") {
+      return "#323031";
+    } else if (item === true) {
+      return "#41D3BD";
+    } else if (item === false) {
+      return "#D90429";
+    }
   };
 
   return (
@@ -42,9 +46,9 @@ const Game = ({ setWinner, setRedPoint, setBluePoint }) => {
       {state.map((item, index) => {
         return (
           <div
+            key={index}
             className={index}
             id={`item${index}`}
-            style={{ backgroundColor: "#323031" }}
             onClick={
               gameIsOn
                 ? (event) => {
@@ -54,7 +58,14 @@ const Game = ({ setWinner, setRedPoint, setBluePoint }) => {
                     return;
                   }
             }
-          ></div>
+          >
+            <span
+              className={`divSpan ${item === "" ? "" : "active"}`}
+              style={{
+                backgroundColor: styleHandler(index),
+              }}
+            ></span>
+          </div>
         );
       })}
       <button onClick={(event) => resetHandler(event)}>Clear</button>

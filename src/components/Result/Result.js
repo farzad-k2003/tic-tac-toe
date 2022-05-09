@@ -1,7 +1,6 @@
 import "./Result.css";
 
 const Result = ({ redPoint, bluePoint }) => {
-  console.log("red point is ", redPoint);
   return (
     <footer>
       <div className="red">{redPoint}</div>
