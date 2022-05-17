@@ -22,7 +22,7 @@ const Game = ({ setWinner, setRedPoint, setBluePoint }) => {
     [state]
   );
 
-  const resetHandler = (event) => {
+  const clearHandler = () => {
     setState(Array(9).fill(""));
     setTurn(true);
     setGameIsOn(true);
@@ -68,7 +68,7 @@ const Game = ({ setWinner, setRedPoint, setBluePoint }) => {
           </div>
         );
       })}
-      <button onClick={(event) => resetHandler(event)}>Clear</button>
+      <button onClick={(event) => clearHandler(event)}>Clear</button>
     </div>
   );
 };

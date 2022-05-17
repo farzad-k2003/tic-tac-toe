@@ -37,10 +37,16 @@ export const winnerLogic = (
     setGameIsOn(false);
     if (turn) {
       setWinner("#D90429");
-      setRedPoint((prev) => prev + 1);
+      setRedPoint((prev) => {
+        localStorage.setItem("redPoint", prev + 1);
+        return prev + 1;
+      });
     } else {
       setWinner("#41D3BD");
-      setBluePoint((prev) => prev + 1);
+      setBluePoint((prev) => {
+        localStorage.setItem("bluePoint", prev + 1);
+        return prev + 1;
+      });
     }
   } else if (!mainCondotion && list.every((item) => item !== "")) {
     setWinner("#F7D002");
